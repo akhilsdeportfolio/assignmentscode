@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <title>Deboncing</title>
+
+
+    <style>
+        *{
+            font-family: 'Roboto', sans-serif;
+        }
+        input{
+            width:300px;
+            padding:15px;;
+            overflow: scroll;
+            
+            border:1px dashed black;
+        }
+        #movies {
+      height: 300px;
+      padding:15px;
+      width: 300px;
+      border: 1px solid black;
+      border-top: none;
+      overflow: scroll;
+    }
+
+    .left{
+        float: left;
+    }
+    .right{
+        float: right;
+        word-wrap: break-word;
+        text-align: left;
+    }
+    .clear{
+        clear: both;
+    }
+    </style>
+</head>
+<body>
+    
+
+    <input id="search" type="text" name="q" placeholder="Search movies" oninput="debounce(main,300)">
+    <div id="movies"></div>
+
+
+
+    <script>
+        var div=document.getElementById("movies");
+        var id;
+        async function main(){
+            let value = document.getElementById("search").value;
+            //console.log(value);
+            var results=await searchMovies(value);
+            if(results!= undefined){
+                console.log(results);
+            
+                appendedMovies(results);
+            }
+            else
+            {
+                var div = document.createElement("div");
+                div.setAttribute("id","error");
+                var img= document.createElement("img");
+                img.src="https://cdn.dribbble.com/users/2382015/screenshots/6065978/no_result.gif";
+
+                var button =document.createElement("button");
+                button.innerText="Try Again";
+                button.addEventListener("click",(e)=>{
+                    if(document.getElementById("error")!=null)
+                    {
+                        document.getElementById("error").remove();
+                    }
+                    else{
+                    document.getElementById("error").style.display="none";
+                    
+                }
+
+                    document.getElementById("search").style.display="block";
+                    document.getElementById("movies").style.display="block";
+                    document.getElementById("search").value=null;
+                    
+
+                });
+                div.append(img,button);
+                document.body.append(div);
+
+                document.getElementById("search").style.display="none";
+                document.getElementById("movies").style.display="none";
+
+            }
+
+            
+            
+
+        }
+
+        function appendedMovies(results) {
+            div.innerHTML=null;
+            results.forEach(({Title,Poster})=>{
+                let d = document.createElement("div");
+                let image= document.createElement("img");
+                image.src=Poster;
+                image.setAttribute("class","left");
+                image.style.width="50px";
+                image.style.height="50px";
+                let p = document.createElement("p");
+                p.innerHTML = Title;              
+                p.setAttribute("class","right");
+                p.style.minWidth="200px";
+                p.style.maxWidth="200px";
+                p.style.fontSize="12px"
+                d.append(image);
+                d.append(p);
+                var clear =document.createElement("div");
+                clear.setAttribute("class","clear");
+                d.append(clear);
+                d.style.padding="5px";
+                d.style.border="1px solid whitesmoke"
+                div.appendChild(d);
+            });
+
+        }
+
+        async function searchMovies(name){
+            if(name.length > 3)
+            {
+            var url=`http://www.omdbapi.com/?s=${name}&apikey=d806bd70`;
+            let res = await fetch(url);
+            let data = await res.json();
+            return data.Search;
+            }
+
+         }
+
+    function debounce(func,delay) {
+
+    
+     if(id!=null || id!= undefined)   
+        {
+            clearTimeout(id);
+        }
+    id= setTimeout(()=>{
+                func();
+            },delay);
+    }    
+    </script>
+</body>
+</html>
