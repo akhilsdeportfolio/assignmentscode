@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recepie of the day</title>
+    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100,400&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+
+
+    <div id="result" style="margin:auto;width:60%"></div>
+
+    <script>
+         async function data()
+        {
+      
+            var url="http://www.themealdb.com/api/json/v1/1/random.php";
+            console.log(url);
+            let res = await fetch(url,{
+                method:"GET",
+                header:{
+                    "mode":"no-cors"
+                }
+            }); 
+            let data = await res.json();
+
+            console.log(data);
+
+            var results=document.getElementById("result");
+            data.meals.forEach((meal)=>{
+
+                let image = document.createElement("img");
+                let title = document.createElement("p");
+                let tags = document.createElement("p");
+                let ingredients= document.createElement("p");
+                let instructions = document.createElement("p");
+
+
+                image.src = meal.strMealThumb;
+                title.innerText= "Meal Name :\t"+meal.strMeal;  
+                tags.innerText= "Tags :\t"+meal.strTags; 
+                ingredients.innerText="Ingredients : \t"+ meal.strIngredient1+"-"+meal.strMeasure1+","+meal.strIngredient2+"-"+meal.strMeasure2+","+meal.strIngredient3+"-"+meal.strMeasure3; 
+                instructions.innerText= "Instructions : \n\n"+meal.strInstructions;
+
+
+                results.append(image,title,tags,ingredients,instructions);
+
+
+
+
+            });
+
+        }
+
+        data();
+    </script>
+    <script src="js/app.js" type="module"/>
+</body>
+</html>

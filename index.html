@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Recepie by name </title>
+    <link rel="stylesheet" href="./css/style.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100,400&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+
+
+
+    <div class="container">
+
+
+        <input id="query" type="text" oninput="debounce(data,1000)" placeholder="Search by recepie name"/>
+        <div id="results">
+
+        </div>
+
+
+
+    </div>
+
+    <script>
+        var id;
+                function data()
+        {
+            var query=document.querySelector("input").value;
+            var url=`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`;
+            console.log(url);
+            fetchData(url);
+
+        }
+            async function fetchData(url)
+            {
+                let res = await fetch(url);
+                let data = await res.json();
+                render(data.meals);
+            }
+            function render(data){
+                console.log(data);
+                var results=document.getElementById("results");
+                results.innerHTML=null;
+                data.forEach((meal)=>{
+
+                        let div = document.createElement("div");
+                        div.style.padding="10px";
+                        let thumb = document.createElement("img");
+                        let p = document.createElement("p");
+                        let d = document.createElement("div");
+
+                        thumb.src = meal.strMealThumb;
+                        p.innerText=meal.strMeal;
+                        thumb.setAttribute("class","left");
+                        p.setAttribute("class","right");
+                        d.setAttribute("class","clear");
+                        div.append(thumb,p,d);
+                        results.append(div);
+
+                });
+            }
+
+
+                function debounce(func,delay) {
+
+                        if(id!=null){   
+                            clearTimeout(id);
+                        }
+
+                        id=setTimeout(()=>{
+                            func()
+                        },delay);
+                }
+    </script>
+    <script src="js/app.js" type="module"/>
+    
+    
+    
+</body>
+</html>
