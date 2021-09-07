@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translation App</title>
+    <style>
+        .container {
+            text-align: center;
+        }
+
+
+        textarea{
+            margin:20px;
+            min-width:500px;
+            padding:5px;
+            min-height: 200px;
+        }
+
+    </style>
+</head>
+
+
+
+<body>
+
+
+    <div class="container">
+
+        <select name="lang" id="target" onchange="setTarget(event)">
+            <option value="en">English</option>
+            <option value="ar">Arabic</option>
+            <option value="zh">Chinese</option>
+            <option value="fr">French</option>
+            <option value="de">German</option>
+            <option value="hi">Hindi</option>
+            <option value="id">Indonesian</option>
+            <option value="ga">Irish</option>
+            <option value="it">Italian</option>
+            <option value="ja">Japanese</option>
+            <option value="ko">Korean</option>
+            <option value="pl">Polish</option>
+            <option value="pt">Portuguese</option>
+            <option value="ru">Russian</option>
+            <option value="es">Spanish</option>
+            <option value="tr">Turkish</option>
+            <option value="vi">Vietnamese</option>
+        </select>
+        
+        <br/>
+
+
+        <textarea id="source" placeholder="Enter some text in english"></textarea>
+
+        <textarea id="translated" placeholder="Translated text will be shown here"></textarea>
+    
+        <br/>
+
+        <button id="translate">Translate</button>
+    </div>
+
+    
+
+    <script>
+
+        var target="en";
+        function setTarget(e)
+        {
+            console.log(e);
+            target = document.getElementById("target").value;            
+        }
+
+
+
+        document.getElementById("translate").addEventListener("click",()=>{
+            translate();
+        })
+
+
+
+        async function translate(){
+
+            const res = await fetch("https://libretranslate.de/translate", {
+                method: "POST",
+                body: JSON.stringify({
+                    q: document.getElementById("source").value,
+                    source:"en",
+                    target: target
+                }),
+                headers: { "Content-Type": "application/json" }
+            });
+
+            let tt=await res.json();
+
+
+            document.getElementById("translated").value=tt.translatedText;
+
+        }
+
+    </script>
+    
+
+
+
+
+</body>
+
+</html>
