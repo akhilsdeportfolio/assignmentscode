@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Welcome to this tutorial</h2>
+
+
+
+    <button>GET REQUEST</button>
+    <button>POST REQUEST</button>
+    <button>PUT REQUEST</button>
+    <button>DELETE REQUEST</button>
+    
+    
+<script>
+
+    async function callServer(){
+            let res = await fetch('http://localhost:3000/api/products/',{
+                method:'POST',
+                body:{
+                    "id":200,
+                    "name":"akhil",
+                    "age":"200"
+                }
+            });
+            let data = await res.json();
+            console.log(data);
+    }
+
+    //callServer();
+</script>
+</body>
+</html>
+
