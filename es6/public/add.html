@@ -11,28 +11,63 @@
 
 
 
-    <button>GET REQUEST</button>
-    <button>POST REQUEST</button>
-    <button>PUT REQUEST</button>
-    <button>DELETE REQUEST</button>
+    <button onclick="getCall()">GET REQUEST</button>
+
+    <button onclick="postCall()">POST REQUEST</button>
+
+    <button onclick="putCall()">PUT REQUEST</button>
+
+    <button onclick="deleteCall()">DELETE REQUEST</button>
+
     
     
 <script>
 
-    async function callServer(){
-            let res = await fetch('http://localhost:3000/api/products/',{
+    async function postCall(){
+            let res = await fetch('http://localhost:5000/api/products/',{
                 method:'POST',
                 body:{
-                    "id":200,
-                    "name":"akhil",
-                    "age":"200"
+                    "id":4,
+                    "name":"jhonson",
+                    "age":"25"
                 }
             });
             let data = await res.json();
             console.log(data);
     }
 
-    //callServer();
+
+
+    async function getCall(){
+            let res = await fetch('http://localhost:5000/api/users/');
+            let data = await res.json();
+            console.log(data);
+    }
+
+    async function putCall(){
+            let res = await fetch('http://localhost:5000/api/users/2',{
+                method:'PUT',
+                body:{
+                    "name":"dwanye jhonson",
+                    "active":"true"
+                }
+            });
+            let data = await res.json();
+            console.log(data);
+    }
+
+    async function deleteCall(){
+            let res = await fetch('http://localhost:5000/api/users/3',{
+                method:'DELETE'
+            });
+            let data = await res.json();
+            console.log(data);
+    }
+
+
+    
+
+    
 </script>
 </body>
 </html>
