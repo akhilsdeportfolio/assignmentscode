@@ -9,8 +9,6 @@
 <body>
     <h2>Welcome to this tutorial</h2>
 
-
-
     <button onclick="getCall()">GET REQUEST</button>
 
     <button onclick="postCall()">POST REQUEST</button>
@@ -18,16 +16,14 @@
     <button onclick="putCall()">PUT REQUEST</button>
 
     <button onclick="deleteCall()">DELETE REQUEST</button>
-
-    
     
 <script>
 
-    async function postCall(){
+async function postCall(){
             let res = await fetch('http://localhost:5000/api/products/',{
                 method:'POST',
                 body:{
-                    "id":4,
+                    "id":500,
                     "name":"jhonson",
                     "age":"25"
                 }
@@ -64,10 +60,6 @@
             console.log(data);
     }
 
-
-    
-
-    
 </script>
 </body>
 </html>
