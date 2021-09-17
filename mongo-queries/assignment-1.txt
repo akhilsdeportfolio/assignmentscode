@@ -1,0 +1,2352 @@
+
+assignment>  db.movies.find({movie_name:"Antarctica"})
+[
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87ac"),
+
+assignment>  db.movies.find({movie_name:"Antarctica"})
+[
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87ac"),
+    id: 13,
+    movie_name: 'Antarctica',
+    movie_genre: 'Adventure|Drama',
+    production_year: 1990,
+    budget: 6301
+  }
+]
+assignment>  db.movies.find({movie_name:{$ne:"Antarctica"}})
+[
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a0"),
+    id: 1,
+    movie_name: 'Lawless Street, A (Marshal of Medicine Bend)',
+    movie_genre: 'Western',
+    production_year: 2000,
+    budget: 4569
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a1"),
+    id: 2,
+    movie_name: 'Dog Nail Clipper (Koirankynnenleikkaaja)',
+    movie_genre: 'Drama',
+    production_year: 2010,
+    budget: 7885
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a2"),
+    id: 3,
+    movie_name: 'It Started in Naples',
+    movie_genre: 'Comedy|Drama',
+    production_year: 2001,
+    budget: 8942
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a3"),
+    id: 4,
+    movie_name: 'Wedding Director, The (Il regista di matrimoni)',
+    movie_genre: 'Drama|Mystery',
+    production_year: 2008,
+    budget: 4877
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a4"),
+    id: 5,
+    movie_name: 'Crush',
+    movie_genre: 'Comedy|Romance',
+    production_year: 1986,
+    budget: 4523
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a5"),
+    id: 6,
+    movie_name: 'Reversal of Fortune',
+    movie_genre: 'Drama',
+    production_year: 1967,
+    budget: 2049
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a6"),
+    id: 7,
+    movie_name: 'Benji: Off the Leash!',
+    movie_genre: 'Children|Drama',
+    production_year: 2007,
+    budget: 7161
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a7"),
+    id: 8,
+    movie_name: 'Sut (Milk)',
+    movie_genre: 'Drama',
+    production_year: 2003,
+    budget: 5761
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a8"),
+    id: 9,
+    movie_name: 'Endangered Species',
+    movie_genre: 'Mystery|Sci-Fi|Thriller',
+    production_year: 2012,
+    budget: 7513
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a9"),
+    id: 10,
+    movie_name: 'Samurai Rebellion (Jôi-uchi: Hairyô tsuma shimatsu)',
+    movie_genre: 'Action|Drama',
+    production_year: 1988,
+    budget: 3792
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87aa"),
+    id: 11,
+    movie_name: 'Miss Sweden (Fröken Sverige)',
+    movie_genre: 'Drama',
+    production_year: 1994,
+    budget: 3570
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87ab"),
+    id: 12,
+    movie_name: 'Lifted',
+    movie_genre: 'Animation|Comedy|Sci-Fi',
+    production_year: 1996,
+    budget: 7036
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87ad"),
+    id: 14,
+    movie_name: 'Crimewave',
+    movie_genre: 'Comedy|Crime',
+    production_year: 1996,
+    budget: 2087
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87ae"),
+    id: 15,
+    movie_name: 'Iron Mask, The',
+    movie_genre: 'Adventure|Drama|Romance',
+    production_year: 1994,
+    budget: 7067
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87af"),
+    id: 16,
+    movie_name: 'Worthless, The (Arvottomat)',
+    movie_genre: 'Crime|Drama',
+    production_year: 2003,
+    budget: 3703
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b0"),
+    id: 17,
+    movie_name: 'Tiptoes',
+    movie_genre: 'Comedy|Drama|Romance',
+    production_year: 2005,
+    budget: 7387
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b1"),
+    id: 18,
+    movie_name: 'Grass Is Greener, The',
+    movie_genre: 'Comedy|Romance',
+    production_year: 1998,
+    budget: 4746
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b2"),
+    id: 19,
+    movie_name: 'Civil Brand',
+    movie_genre: 'Drama',
+    production_year: 1995,
+    budget: 4940
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b3"),
+    id: 20,
+    movie_name: 'Two Arabian Knights',
+    movie_genre: 'Adventure|Comedy|Romance',
+    production_year: 2011,
+    budget: 5905
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b4"),
+    id: 21,
+    movie_name: 'Never Say Never Again',
+    movie_genre: 'Action|Adventure|Thriller',
+    production_year: 2012,
+    budget: 6520
+  }
+]
+Type "it" for more
+assignment> db.movies.find({budget:{$gte:4000}})
+[
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a0"),
+    id: 1,
+    movie_name: 'Lawless Street, A (Marshal of Medicine Bend)',
+    movie_genre: 'Western',
+    production_year: 2000,
+    budget: 4569
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a1"),
+    id: 2,
+    movie_name: 'Dog Nail Clipper (Koirankynnenleikkaaja)',
+    movie_genre: 'Drama',
+    production_year: 2010,
+    budget: 7885
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a2"),
+    id: 3,
+    movie_name: 'It Started in Naples',
+    movie_genre: 'Comedy|Drama',
+    production_year: 2001,
+    budget: 8942
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a3"),
+    id: 4,
+    movie_name: 'Wedding Director, The (Il regista di matrimoni)',
+    movie_genre: 'Drama|Mystery',
+    production_year: 2008,
+    budget: 4877
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a4"),
+    id: 5,
+    movie_name: 'Crush',
+    movie_genre: 'Comedy|Romance',
+    production_year: 1986,
+    budget: 4523
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a6"),
+    id: 7,
+    movie_name: 'Benji: Off the Leash!',
+    movie_genre: 'Children|Drama',
+    production_year: 2007,
+    budget: 7161
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a7"),
+    id: 8,
+    movie_name: 'Sut (Milk)',
+    movie_genre: 'Drama',
+    production_year: 2003,
+    budget: 5761
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a8"),
+    id: 9,
+    movie_name: 'Endangered Species',
+    movie_genre: 'Mystery|Sci-Fi|Thriller',
+    production_year: 2012,
+    budget: 7513
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87ab"),
+    id: 12,
+    movie_name: 'Lifted',
+    movie_genre: 'Animation|Comedy|Sci-Fi',
+    production_year: 1996,
+    budget: 7036
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87ac"),
+    id: 13,
+    movie_name: 'Antarctica',
+    movie_genre: 'Adventure|Drama',
+    production_year: 1990,
+    budget: 6301
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87ae"),
+    id: 15,
+    movie_name: 'Iron Mask, The',
+    movie_genre: 'Adventure|Drama|Romance',
+    production_year: 1994,
+    budget: 7067
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b0"),
+    id: 17,
+    movie_name: 'Tiptoes',
+    movie_genre: 'Comedy|Drama|Romance',
+    production_year: 2005,
+    budget: 7387
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b1"),
+    id: 18,
+    movie_name: 'Grass Is Greener, The',
+    movie_genre: 'Comedy|Romance',
+    production_year: 1998,
+    budget: 4746
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b2"),
+    id: 19,
+    movie_name: 'Civil Brand',
+    movie_genre: 'Drama',
+    production_year: 1995,
+    budget: 4940
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b3"),
+    id: 20,
+    movie_name: 'Two Arabian Knights',
+    movie_genre: 'Adventure|Comedy|Romance',
+    production_year: 2011,
+    budget: 5905
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b4"),
+    id: 21,
+    movie_name: 'Never Say Never Again',
+    movie_genre: 'Action|Adventure|Thriller',
+    production_year: 2012,
+    budget: 6520
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b6"),
+    id: 23,
+    movie_name: 'Just the Ticket',
+    movie_genre: 'Comedy|Romance',
+    production_year: 1999,
+    budget: 6448
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b7"),
+    id: 24,
+    movie_name: 'Reckoning, The',
+    movie_genre: 'Crime|Mystery|Thriller',
+    production_year: 1997,
+    budget: 7780
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b8"),
+    id: 25,
+    movie_name: 'Mi Amigo Hugo',
+    movie_genre: 'Documentary',
+    production_year: 2008,
+    budget: 7211
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b9"),
+    id: 26,
+    movie_name: 'Freeway',
+    movie_genre: 'Comedy|Crime|Drama|Thriller',
+    production_year: 1999,
+    budget: 8249
+  }
+]
+Type "it" for more
+assignment> db.movies.find($and:[{movie_year:{$gt:2000}},{$gt:{10000}}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:19)
+
+> 1 | db.movies.find($and:[{movie_year:{$gt:2000}},{$gt:{10000}}])
+    |                    ^
+  2 |
+
+assignment> db.movies.find({$and:[{movie_year:{$gt:2000}},{$gt:{10000}}]})
+Uncaught:
+SyntaxError: Unexpected token (1:57)
+
+> 1 | db.movies.find({$and:[{movie_year:{$gt:2000}},{$gt:{10000}}]})
+    |                                                          ^
+  2 |
+
+assignment> db.movies.find({$and:[{movie_year:{$gt:2000}},{budget:{$gt:10000}]}})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:65)
+
+> 1 | db.movies.find({$and:[{movie_year:{$gt:2000}},{budget:{$gt:10000}]}})
+    |                                                                  ^
+  2 |
+
+assignment> db.movies.find({$and:[{movie_year:{$gt:2000}},{budget:{$gt:10000}}])
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:67)
+
+> 1 | db.movies.find({$and:[{movie_year:{$gt:2000}},{budget:{$gt:10000}}])
+    |                                                                    ^
+  2 |
+
+assignment> db.movies.find({$and:[{movie_year:{$gt:2000}},{budget:{$gt:10000}}]})
+
+assignment> db.movies.find({$and:[{budget:{$lte:10000}}]})
+[
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a0"),
+    id: 1,
+    movie_name: 'Lawless Street, A (Marshal of Medicine Bend)',
+    movie_genre: 'Western',
+    production_year: 2000,
+    budget: 4569
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a1"),
+    id: 2,
+    movie_name: 'Dog Nail Clipper (Koirankynnenleikkaaja)',
+    movie_genre: 'Drama',
+    production_year: 2010,
+    budget: 7885
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a2"),
+    id: 3,
+    movie_name: 'It Started in Naples',
+    movie_genre: 'Comedy|Drama',
+    production_year: 2001,
+    budget: 8942
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a3"),
+    id: 4,
+    movie_name: 'Wedding Director, The (Il regista di matrimoni)',
+    movie_genre: 'Drama|Mystery',
+    production_year: 2008,
+    budget: 4877
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a4"),
+    id: 5,
+    movie_name: 'Crush',
+    movie_genre: 'Comedy|Romance',
+    production_year: 1986,
+    budget: 4523
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a5"),
+    id: 6,
+    movie_name: 'Reversal of Fortune',
+    movie_genre: 'Drama',
+    production_year: 1967,
+    budget: 2049
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a6"),
+    id: 7,
+    movie_name: 'Benji: Off the Leash!',
+    movie_genre: 'Children|Drama',
+    production_year: 2007,
+    budget: 7161
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a7"),
+    id: 8,
+    movie_name: 'Sut (Milk)',
+    movie_genre: 'Drama',
+    production_year: 2003,
+    budget: 5761
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a8"),
+    id: 9,
+    movie_name: 'Endangered Species',
+    movie_genre: 'Mystery|Sci-Fi|Thriller',
+    production_year: 2012,
+    budget: 7513
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a9"),
+    id: 10,
+    movie_name: 'Samurai Rebellion (Jôi-uchi: Hairyô tsuma shimatsu)',
+    movie_genre: 'Action|Drama',
+    production_year: 1988,
+    budget: 3792
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87aa"),
+    id: 11,
+    movie_name: 'Miss Sweden (Fröken Sverige)',
+    movie_genre: 'Drama',
+    production_year: 1994,
+    budget: 3570
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87ab"),
+    id: 12,
+    movie_name: 'Lifted',
+    movie_genre: 'Animation|Comedy|Sci-Fi',
+    production_year: 1996,
+    budget: 7036
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87ac"),
+    id: 13,
+    movie_name: 'Antarctica',
+    movie_genre: 'Adventure|Drama',
+    production_year: 1990,
+    budget: 6301
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87ad"),
+    id: 14,
+    movie_name: 'Crimewave',
+    movie_genre: 'Comedy|Crime',
+    production_year: 1996,
+    budget: 2087
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87ae"),
+    id: 15,
+    movie_name: 'Iron Mask, The',
+    movie_genre: 'Adventure|Drama|Romance',
+    production_year: 1994,
+    budget: 7067
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87af"),
+    id: 16,
+    movie_name: 'Worthless, The (Arvottomat)',
+    movie_genre: 'Crime|Drama',
+    production_year: 2003,
+    budget: 3703
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b0"),
+    id: 17,
+    movie_name: 'Tiptoes',
+    movie_genre: 'Comedy|Drama|Romance',
+    production_year: 2005,
+    budget: 7387
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b1"),
+    id: 18,
+    movie_name: 'Grass Is Greener, The',
+    movie_genre: 'Comedy|Romance',
+    production_year: 1998,
+    budget: 4746
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b2"),
+    id: 19,
+    movie_name: 'Civil Brand',
+    movie_genre: 'Drama',
+    production_year: 1995,
+    budget: 4940
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b3"),
+    id: 20,
+    movie_name: 'Two Arabian Knights',
+    movie_genre: 'Adventure|Comedy|Romance',
+    production_year: 2011,
+    budget: 5905
+  }
+]
+Type "it" for more
+assignment> db.movies.find({$and:[{movie_year:{$gt:2000}},{budget:{$gt:10000}}]})
+
+assignment> db.movies.find({$or:[{movie_year:{$gt:2000}},{budget:{$gt:10000}}]})
+
+assignment> db.movies.find({$or:[{movie_year:{$gt:2000}},{budget:{$gt:10000}}]})
+
+assignment> db.movies.find({$nor:[{movie_year:{$gt:2000}},{budget:{$gt:10000}}]})
+[
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a0"),
+    id: 1,
+    movie_name: 'Lawless Street, A (Marshal of Medicine Bend)',
+    movie_genre: 'Western',
+    production_year: 2000,
+    budget: 4569
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a1"),
+    id: 2,
+    movie_name: 'Dog Nail Clipper (Koirankynnenleikkaaja)',
+    movie_genre: 'Drama',
+    production_year: 2010,
+    budget: 7885
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a2"),
+    id: 3,
+    movie_name: 'It Started in Naples',
+    movie_genre: 'Comedy|Drama',
+    production_year: 2001,
+    budget: 8942
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a3"),
+    id: 4,
+    movie_name: 'Wedding Director, The (Il regista di matrimoni)',
+    movie_genre: 'Drama|Mystery',
+    production_year: 2008,
+    budget: 4877
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a4"),
+    id: 5,
+    movie_name: 'Crush',
+    movie_genre: 'Comedy|Romance',
+    production_year: 1986,
+    budget: 4523
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a5"),
+    id: 6,
+    movie_name: 'Reversal of Fortune',
+    movie_genre: 'Drama',
+    production_year: 1967,
+    budget: 2049
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a6"),
+    id: 7,
+    movie_name: 'Benji: Off the Leash!',
+    movie_genre: 'Children|Drama',
+    production_year: 2007,
+    budget: 7161
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a7"),
+    id: 8,
+    movie_name: 'Sut (Milk)',
+    movie_genre: 'Drama',
+    production_year: 2003,
+    budget: 5761
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a8"),
+    id: 9,
+    movie_name: 'Endangered Species',
+    movie_genre: 'Mystery|Sci-Fi|Thriller',
+    production_year: 2012,
+    budget: 7513
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a9"),
+    id: 10,
+    movie_name: 'Samurai Rebellion (Jôi-uchi: Hairyô tsuma shimatsu)',
+    movie_genre: 'Action|Drama',
+    production_year: 1988,
+    budget: 3792
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87aa"),
+    id: 11,
+    movie_name: 'Miss Sweden (Fröken Sverige)',
+    movie_genre: 'Drama',
+    production_year: 1994,
+    budget: 3570
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87ab"),
+    id: 12,
+    movie_name: 'Lifted',
+    movie_genre: 'Animation|Comedy|Sci-Fi',
+    production_year: 1996,
+    budget: 7036
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87ac"),
+    id: 13,
+    movie_name: 'Antarctica',
+    movie_genre: 'Adventure|Drama',
+    production_year: 1990,
+    budget: 6301
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87ad"),
+    id: 14,
+    movie_name: 'Crimewave',
+    movie_genre: 'Comedy|Crime',
+    production_year: 1996,
+    budget: 2087
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87ae"),
+    id: 15,
+    movie_name: 'Iron Mask, The',
+    movie_genre: 'Adventure|Drama|Romance',
+    production_year: 1994,
+    budget: 7067
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87af"),
+    id: 16,
+    movie_name: 'Worthless, The (Arvottomat)',
+    movie_genre: 'Crime|Drama',
+    production_year: 2003,
+    budget: 3703
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b0"),
+    id: 17,
+    movie_name: 'Tiptoes',
+    movie_genre: 'Comedy|Drama|Romance',
+    production_year: 2005,
+    budget: 7387
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b1"),
+    id: 18,
+    movie_name: 'Grass Is Greener, The',
+    movie_genre: 'Comedy|Romance',
+    production_year: 1998,
+    budget: 4746
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b2"),
+    id: 19,
+    movie_name: 'Civil Brand',
+    movie_genre: 'Drama',
+    production_year: 1995,
+    budget: 4940
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b3"),
+    id: 20,
+    movie_name: 'Two Arabian Knights',
+    movie_genre: 'Adventure|Comedy|Romance',
+    production_year: 2011,
+    budget: 5905
+  }
+]
+Type "it" for more
+assignment> db.movies.find({$nor:[{movie_year:{$lt:2000}},{budget:{$gt:10000}}]})
+[
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a0"),
+    id: 1,
+    movie_name: 'Lawless Street, A (Marshal of Medicine Bend)',
+    movie_genre: 'Western',
+    production_year: 2000,
+    budget: 4569
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a1"),
+    id: 2,
+    movie_name: 'Dog Nail Clipper (Koirankynnenleikkaaja)',
+    movie_genre: 'Drama',
+    production_year: 2010,
+    budget: 7885
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a2"),
+    id: 3,
+    movie_name: 'It Started in Naples',
+    movie_genre: 'Comedy|Drama',
+    production_year: 2001,
+    budget: 8942
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a3"),
+    id: 4,
+    movie_name: 'Wedding Director, The (Il regista di matrimoni)',
+    movie_genre: 'Drama|Mystery',
+    production_year: 2008,
+    budget: 4877
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a4"),
+    id: 5,
+    movie_name: 'Crush',
+    movie_genre: 'Comedy|Romance',
+    production_year: 1986,
+    budget: 4523
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a5"),
+    id: 6,
+    movie_name: 'Reversal of Fortune',
+    movie_genre: 'Drama',
+    production_year: 1967,
+    budget: 2049
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a6"),
+    id: 7,
+    movie_name: 'Benji: Off the Leash!',
+    movie_genre: 'Children|Drama',
+    production_year: 2007,
+    budget: 7161
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a7"),
+    id: 8,
+    movie_name: 'Sut (Milk)',
+    movie_genre: 'Drama',
+    production_year: 2003,
+    budget: 5761
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a8"),
+    id: 9,
+    movie_name: 'Endangered Species',
+    movie_genre: 'Mystery|Sci-Fi|Thriller',
+    production_year: 2012,
+    budget: 7513
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a9"),
+    id: 10,
+    movie_name: 'Samurai Rebellion (Jôi-uchi: Hairyô tsuma shimatsu)',
+    movie_genre: 'Action|Drama',
+    production_year: 1988,
+    budget: 3792
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87aa"),
+    id: 11,
+    movie_name: 'Miss Sweden (Fröken Sverige)',
+    movie_genre: 'Drama',
+    production_year: 1994,
+    budget: 3570
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87ab"),
+    id: 12,
+    movie_name: 'Lifted',
+    movie_genre: 'Animation|Comedy|Sci-Fi',
+    production_year: 1996,
+    budget: 7036
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87ac"),
+    id: 13,
+    movie_name: 'Antarctica',
+    movie_genre: 'Adventure|Drama',
+    production_year: 1990,
+    budget: 6301
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87ad"),
+    id: 14,
+    movie_name: 'Crimewave',
+    movie_genre: 'Comedy|Crime',
+    production_year: 1996,
+    budget: 2087
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87ae"),
+    id: 15,
+    movie_name: 'Iron Mask, The',
+    movie_genre: 'Adventure|Drama|Romance',
+    production_year: 1994,
+    budget: 7067
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87af"),
+    id: 16,
+    movie_name: 'Worthless, The (Arvottomat)',
+    movie_genre: 'Crime|Drama',
+    production_year: 2003,
+    budget: 3703
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b0"),
+    id: 17,
+    movie_name: 'Tiptoes',
+    movie_genre: 'Comedy|Drama|Romance',
+    production_year: 2005,
+    budget: 7387
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b1"),
+    id: 18,
+    movie_name: 'Grass Is Greener, The',
+    movie_genre: 'Comedy|Romance',
+    production_year: 1998,
+    budget: 4746
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b2"),
+    id: 19,
+    movie_name: 'Civil Brand',
+    movie_genre: 'Drama',
+    production_year: 1995,
+    budget: 4940
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b3"),
+    id: 20,
+    movie_name: 'Two Arabian Knights',
+    movie_genre: 'Adventure|Comedy|Romance',
+    production_year: 2011,
+    budget: 5905
+  }
+]
+Type "it" for more
+assignment> db.movies.find({$or:[{movie_year:{$ne:2000}},{budget:{$ne:10000}}]})
+[
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a0"),
+    id: 1,
+    movie_name: 'Lawless Street, A (Marshal of Medicine Bend)',
+    movie_genre: 'Western',
+    production_year: 2000,
+    budget: 4569
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a1"),
+    id: 2,
+    movie_name: 'Dog Nail Clipper (Koirankynnenleikkaaja)',
+    movie_genre: 'Drama',
+    production_year: 2010,
+    budget: 7885
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a2"),
+    id: 3,
+    movie_name: 'It Started in Naples',
+    movie_genre: 'Comedy|Drama',
+    production_year: 2001,
+    budget: 8942
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a3"),
+    id: 4,
+    movie_name: 'Wedding Director, The (Il regista di matrimoni)',
+    movie_genre: 'Drama|Mystery',
+    production_year: 2008,
+    budget: 4877
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a4"),
+    id: 5,
+    movie_name: 'Crush',
+    movie_genre: 'Comedy|Romance',
+    production_year: 1986,
+    budget: 4523
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a5"),
+    id: 6,
+    movie_name: 'Reversal of Fortune',
+    movie_genre: 'Drama',
+    production_year: 1967,
+    budget: 2049
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a6"),
+    id: 7,
+    movie_name: 'Benji: Off the Leash!',
+    movie_genre: 'Children|Drama',
+    production_year: 2007,
+    budget: 7161
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a7"),
+    id: 8,
+    movie_name: 'Sut (Milk)',
+    movie_genre: 'Drama',
+    production_year: 2003,
+    budget: 5761
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a8"),
+    id: 9,
+    movie_name: 'Endangered Species',
+    movie_genre: 'Mystery|Sci-Fi|Thriller',
+    production_year: 2012,
+    budget: 7513
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a9"),
+    id: 10,
+    movie_name: 'Samurai Rebellion (Jôi-uchi: Hairyô tsuma shimatsu)',
+    movie_genre: 'Action|Drama',
+    production_year: 1988,
+    budget: 3792
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87aa"),
+    id: 11,
+    movie_name: 'Miss Sweden (Fröken Sverige)',
+    movie_genre: 'Drama',
+    production_year: 1994,
+    budget: 3570
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87ab"),
+    id: 12,
+    movie_name: 'Lifted',
+    movie_genre: 'Animation|Comedy|Sci-Fi',
+    production_year: 1996,
+    budget: 7036
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87ac"),
+    id: 13,
+    movie_name: 'Antarctica',
+    movie_genre: 'Adventure|Drama',
+    production_year: 1990,
+    budget: 6301
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87ad"),
+    id: 14,
+    movie_name: 'Crimewave',
+    movie_genre: 'Comedy|Crime',
+    production_year: 1996,
+    budget: 2087
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87ae"),
+    id: 15,
+    movie_name: 'Iron Mask, The',
+    movie_genre: 'Adventure|Drama|Romance',
+    production_year: 1994,
+    budget: 7067
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87af"),
+    id: 16,
+    movie_name: 'Worthless, The (Arvottomat)',
+    movie_genre: 'Crime|Drama',
+    production_year: 2003,
+    budget: 3703
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b0"),
+    id: 17,
+    movie_name: 'Tiptoes',
+    movie_genre: 'Comedy|Drama|Romance',
+    production_year: 2005,
+    budget: 7387
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b1"),
+    id: 18,
+    movie_name: 'Grass Is Greener, The',
+    movie_genre: 'Comedy|Romance',
+    production_year: 1998,
+    budget: 4746
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b2"),
+    id: 19,
+    movie_name: 'Civil Brand',
+    movie_genre: 'Drama',
+    production_year: 1995,
+    budget: 4940
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b3"),
+    id: 20,
+    movie_name: 'Two Arabian Knights',
+    movie_genre: 'Adventure|Comedy|Romance',
+    production_year: 2011,
+    budget: 5905
+  }
+]
+Type "it" for more
+assignment> db.movies.find({$and:[{movie_year:{$gte:2000}},{movie_year:{$gte:2000}}]})
+
+assignment> db.movies.find({$and:[{movie_year:{$gte:2000}},{movie_year:{$gte:2010}}]})
+
+assignment> db.movies.find({$and:[{movie_year:{$gte:2000}},{movie_year:{$gte:2010}}]})
+
+assignment>
+
+assignment> db.movies.find({movie_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}})
+
+assignment> db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}})
+[
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a0"),
+    id: 1,
+    movie_name: 'Lawless Street, A (Marshal of Medicine Bend)',
+    movie_genre: 'Western',
+    production_year: 2000,
+    budget: 4569
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a1"),
+    id: 2,
+    movie_name: 'Dog Nail Clipper (Koirankynnenleikkaaja)',
+    movie_genre: 'Drama',
+    production_year: 2010,
+    budget: 7885
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a2"),
+    id: 3,
+    movie_name: 'It Started in Naples',
+    movie_genre: 'Comedy|Drama',
+    production_year: 2001,
+    budget: 8942
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a3"),
+    id: 4,
+    movie_name: 'Wedding Director, The (Il regista di matrimoni)',
+    movie_genre: 'Drama|Mystery',
+    production_year: 2008,
+    budget: 4877
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a6"),
+    id: 7,
+    movie_name: 'Benji: Off the Leash!',
+    movie_genre: 'Children|Drama',
+    production_year: 2007,
+    budget: 7161
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a7"),
+    id: 8,
+    movie_name: 'Sut (Milk)',
+    movie_genre: 'Drama',
+    production_year: 2003,
+    budget: 5761
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87af"),
+    id: 16,
+    movie_name: 'Worthless, The (Arvottomat)',
+    movie_genre: 'Crime|Drama',
+    production_year: 2003,
+    budget: 3703
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b0"),
+    id: 17,
+    movie_name: 'Tiptoes',
+    movie_genre: 'Comedy|Drama|Romance',
+    production_year: 2005,
+    budget: 7387
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87b8"),
+    id: 25,
+    movie_name: 'Mi Amigo Hugo',
+    movie_genre: 'Documentary',
+    production_year: 2008,
+    budget: 7211
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87ba"),
+    id: 27,
+    movie_name: 'The Pee-Wee Herman Show on Broadway',
+    movie_genre: 'Comedy',
+    production_year: 2003,
+    budget: 4767
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87bb"),
+    id: 28,
+    movie_name: 'Thing, The',
+    movie_genre: 'Action|Horror|Sci-Fi|Thriller',
+    production_year: 2007,
+    budget: 2741
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87bc"),
+    id: 29,
+    movie_name: 'Beyond the Gates of Splendor',
+    movie_genre: 'Documentary',
+    production_year: 2005,
+    budget: 8276
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87bf"),
+    id: 32,
+    movie_name: 'From Here to Eternity',
+    movie_genre: 'Drama|Romance|War',
+    production_year: 2005,
+    budget: 4437
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87c0"),
+    id: 33,
+    movie_name: 'Greatest Game Ever Played, The',
+    movie_genre: 'Drama',
+    production_year: 2003,
+    budget: 3128
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87c4"),
+    id: 37,
+    movie_name: 'Disappearance of Haruhi Suzumiya, The (Suzumiya Haruhi no shôshitsu)',
+    movie_genre: 'Adventure|Animation|Drama|Mystery|Sci-Fi',
+    production_year: 2007,
+    budget: 7302
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87c7"),
+    id: 40,
+    movie_name: 'Barcelona',
+    movie_genre: 'Comedy|Romance',
+    production_year: 2004,
+    budget: 8896
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87c8"),
+    id: 41,
+    movie_name: 'Chiedimi se sono felice',
+    movie_genre: 'Comedy|Drama',
+    production_year: 2006,
+    budget: 6685
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87c9"),
+    id: 42,
+    movie_name: 'Border Café',
+    movie_genre: 'Drama',
+    production_year: 2004,
+    budget: 2080
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87ca"),
+    id: 43,
+    movie_name: 'Steamboat Bill, Jr.',
+    movie_genre: 'Comedy|Romance',
+    production_year: 2001,
+    budget: 6660
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87cb"),
+    id: 44,
+    movie_name: 'Puddle Cruiser',
+    movie_genre: 'Comedy',
+    production_year: 2004,
+    budget: 6556
+  }
+]
+Type "it" for more
+assignment> db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:1,movie_name:1})
+[
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8826"),
+    id: 135,
+    movie_name: 'Acapulco, First Beach... To the Left',
+    movie_genre: 'Comedy',
+    production_year: 2000,
+    budget: 2713
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd88d8"),
+    id: 313,
+    movie_name: 'Accidental Husband, The',
+    movie_genre: 'Comedy|Romance',
+    production_year: 2000,
+    budget: 3109
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8969"),
+    id: 458,
+    movie_name: "All the President's Men",
+    movie_genre: 'Drama|Thriller',
+    production_year: 2000,
+    budget: 2487
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd88f6"),
+    id: 343,
+    movie_name: 'American Gangster',
+    movie_genre: 'Crime|Drama|Thriller',
+    production_year: 2000,
+    budget: 6583
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8907"),
+    id: 360,
+    movie_name: "Beginner's Guide to Endings, A",
+    movie_genre: 'Comedy|Drama',
+    production_year: 2000,
+    budget: 7412
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8957"),
+    id: 440,
+    movie_name: 'Brassed Off',
+    movie_genre: 'Comedy|Drama|Romance',
+    production_year: 2000,
+    budget: 7173
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd897b"),
+    id: 476,
+    movie_name: 'Broken Bridges',
+    movie_genre: 'Drama',
+    production_year: 2000,
+    budget: 5591
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8821"),
+    id: 130,
+    movie_name: 'Contact',
+    movie_genre: 'Drama|Sci-Fi',
+    production_year: 2000,
+    budget: 3357
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd88f8"),
+    id: 345,
+    movie_name: "Dracula: Pages from a Virgin's Diary",
+    movie_genre: 'Horror|Mystery',
+    production_year: 2000,
+    budget: 6696
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8881"),
+    id: 226,
+    movie_name: 'Dragon Ball: The Curse Of The Blood Rubies (Doragon bôru: Shenron no densetsu)',
+    movie_genre: 'Action|Adventure|Animation|Children',
+    production_year: 2000,
+    budget: 4932
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8917"),
+    id: 376,
+    movie_name: 'HazMat',
+    movie_genre: 'Horror',
+    production_year: 2000,
+    budget: 4012
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd88a5"),
+    id: 262,
+    movie_name: 'Journey to the Center of the Earth',
+    movie_genre: 'Adventure|Children|Sci-Fi',
+    production_year: 2000,
+    budget: 6149
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87cf"),
+    id: 48,
+    movie_name: 'Lamp in the Dark; The Untold History of the Bible, A',
+    movie_genre: 'Documentary',
+    production_year: 2000,
+    budget: 6180
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a0"),
+    id: 1,
+    movie_name: 'Lawless Street, A (Marshal of Medicine Bend)',
+    movie_genre: 'Western',
+    production_year: 2000,
+    budget: 4569
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd889b"),
+    id: 252,
+    movie_name: 'Lucy',
+    movie_genre: 'Comedy|Drama',
+    production_year: 2000,
+    budget: 2210
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8867"),
+    id: 200,
+    movie_name: 'Men in White',
+    movie_genre: '(no genres listed)',
+    production_year: 2000,
+    budget: 4312
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd896c"),
+    id: 461,
+    movie_name: 'Message in a Bottle',
+    movie_genre: 'Romance',
+    production_year: 2000,
+    budget: 2272
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8931"),
+    id: 402,
+    movie_name: 'Murder at 1600',
+    movie_genre: 'Crime|Drama|Mystery|Thriller',
+    production_year: 2000,
+    budget: 8977
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8836"),
+    id: 151,
+    movie_name: "Murphy's Romance",
+    movie_genre: 'Comedy|Romance',
+    production_year: 2000,
+    budget: 6997
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8876"),
+    id: 215,
+    movie_name: 'Nothing But the Night',
+    movie_genre: 'Crime|Horror|Mystery|Thriller',
+    production_year: 2000,
+    budget: 2847
+  }
+]
+Type "it" for more
+assignment> db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:-1})
+[
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8936"),
+    id: 407,
+    movie_name: 'Top Hat',
+    movie_genre: 'Comedy|Musical|Romance',
+    production_year: 2010,
+    budget: 3006
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd890e"),
+    id: 367,
+    movie_name: 'To the Sea (Alamar)',
+    movie_genre: 'Drama',
+    production_year: 2010,
+    budget: 7105
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8987"),
+    id: 488,
+    movie_name: 'The Lone Ranger',
+    movie_genre: 'Western',
+    production_year: 2010,
+    budget: 4958
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd885a"),
+    id: 187,
+    movie_name: 'That Forsyte Woman',
+    movie_genre: 'Drama|Romance',
+    production_year: 2010,
+    budget: 7941
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8989"),
+    id: 490,
+    movie_name: 'Spider Lilies (Ci qing)',
+    movie_genre: 'Drama|Romance',
+    production_year: 2010,
+    budget: 8027
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd88ab"),
+    id: 268,
+    movie_name: 'Return of Frank Cannon, The',
+    movie_genre: 'Action|Crime|Drama|Mystery|Thriller',
+    production_year: 2010,
+    budget: 4343
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8950"),
+    id: 433,
+    movie_name: 'Paradise Canyon',
+    movie_genre: 'Crime|Western',
+    production_year: 2010,
+    budget: 6259
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd898c"),
+    id: 493,
+    movie_name: 'Masters of the Universe',
+    movie_genre: 'Action|Adventure|Fantasy|Sci-Fi',
+    production_year: 2010,
+    budget: 4745
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8842"),
+    id: 163,
+    movie_name: 'Lovers and Lollipops',
+    movie_genre: 'Drama|Romance',
+    production_year: 2010,
+    budget: 6894
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd890b"),
+    id: 364,
+    movie_name: 'L.627',
+    movie_genre: 'Crime|Drama|Thriller',
+    production_year: 2010,
+    budget: 2586
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd889e"),
+    id: 255,
+    movie_name: 'Hombre',
+    movie_genre: 'Western',
+    production_year: 2010,
+    budget: 6832
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8828"),
+    id: 137,
+    movie_name: 'Fire of Conscience (For lung)',
+    movie_genre: 'Action|Crime|Mystery|Thriller',
+    production_year: 2010,
+    budget: 3930
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a1"),
+    id: 2,
+    movie_name: 'Dog Nail Clipper (Koirankynnenleikkaaja)',
+    movie_genre: 'Drama',
+    production_year: 2010,
+    budget: 7885
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8869"),
+    id: 202,
+    movie_name: "Craig's Wife",
+    movie_genre: 'Drama',
+    production_year: 2010,
+    budget: 6123
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87d9"),
+    id: 58,
+    movie_name: 'Couch in New York, A',
+    movie_genre: 'Comedy|Drama|Romance',
+    production_year: 2010,
+    budget: 4486
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd896e"),
+    id: 463,
+    movie_name: 'Cheerleader Massacre',
+    movie_genre: 'Horror|Thriller',
+    production_year: 2010,
+    budget: 4067
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd88a1"),
+    id: 258,
+    movie_name: 'A Most Violent Year',
+    movie_genre: 'Action|Crime|Drama|Thriller',
+    production_year: 2010,
+    budget: 2489
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87eb"),
+    id: 76,
+    movie_name: '200 Cigarettes',
+    movie_genre: 'Comedy|Drama',
+    production_year: 2010,
+    budget: 2197
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd88c0"),
+    id: 289,
+    movie_name: 'We Are Marshall',
+    movie_genre: 'Drama',
+    production_year: 2009,
+    budget: 7536
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd885e"),
+    id: 191,
+    movie_name: 'Time of the Wolf, The (Le temps du loup)',
+    movie_genre: 'Drama',
+    production_year: 2009,
+    budget: 8725
+  }
+]
+Type "it" for more
+assignment> db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:1})
+[
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87eb"),
+    id: 76,
+    movie_name: '200 Cigarettes',
+    movie_genre: 'Comedy|Drama',
+    production_year: 2010,
+    budget: 2197
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd88a1"),
+    id: 258,
+    movie_name: 'A Most Violent Year',
+    movie_genre: 'Action|Crime|Drama|Thriller',
+    production_year: 2010,
+    budget: 2489
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd896e"),
+    id: 463,
+    movie_name: 'Cheerleader Massacre',
+    movie_genre: 'Horror|Thriller',
+    production_year: 2010,
+    budget: 4067
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87d9"),
+    id: 58,
+    movie_name: 'Couch in New York, A',
+    movie_genre: 'Comedy|Drama|Romance',
+    production_year: 2010,
+    budget: 4486
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8869"),
+    id: 202,
+    movie_name: "Craig's Wife",
+    movie_genre: 'Drama',
+    production_year: 2010,
+    budget: 6123
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a1"),
+    id: 2,
+    movie_name: 'Dog Nail Clipper (Koirankynnenleikkaaja)',
+    movie_genre: 'Drama',
+    production_year: 2010,
+    budget: 7885
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8828"),
+    id: 137,
+    movie_name: 'Fire of Conscience (For lung)',
+    movie_genre: 'Action|Crime|Mystery|Thriller',
+    production_year: 2010,
+    budget: 3930
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd889e"),
+    id: 255,
+    movie_name: 'Hombre',
+    movie_genre: 'Western',
+    production_year: 2010,
+    budget: 6832
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd890b"),
+    id: 364,
+    movie_name: 'L.627',
+    movie_genre: 'Crime|Drama|Thriller',
+    production_year: 2010,
+    budget: 2586
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8842"),
+    id: 163,
+    movie_name: 'Lovers and Lollipops',
+    movie_genre: 'Drama|Romance',
+    production_year: 2010,
+    budget: 6894
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd898c"),
+    id: 493,
+    movie_name: 'Masters of the Universe',
+    movie_genre: 'Action|Adventure|Fantasy|Sci-Fi',
+    production_year: 2010,
+    budget: 4745
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8950"),
+    id: 433,
+    movie_name: 'Paradise Canyon',
+    movie_genre: 'Crime|Western',
+    production_year: 2010,
+    budget: 6259
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd88ab"),
+    id: 268,
+    movie_name: 'Return of Frank Cannon, The',
+    movie_genre: 'Action|Crime|Drama|Mystery|Thriller',
+    production_year: 2010,
+    budget: 4343
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8989"),
+    id: 490,
+    movie_name: 'Spider Lilies (Ci qing)',
+    movie_genre: 'Drama|Romance',
+    production_year: 2010,
+    budget: 8027
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd885a"),
+    id: 187,
+    movie_name: 'That Forsyte Woman',
+    movie_genre: 'Drama|Romance',
+    production_year: 2010,
+    budget: 7941
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8987"),
+    id: 488,
+    movie_name: 'The Lone Ranger',
+    movie_genre: 'Western',
+    production_year: 2010,
+    budget: 4958
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd890e"),
+    id: 367,
+    movie_name: 'To the Sea (Alamar)',
+    movie_genre: 'Drama',
+    production_year: 2010,
+    budget: 7105
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8936"),
+    id: 407,
+    movie_name: 'Top Hat',
+    movie_genre: 'Comedy|Musical|Romance',
+    production_year: 2010,
+    budget: 3006
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87fa"),
+    id: 91,
+    movie_name: 'As Good as Dead',
+    movie_genre: 'Thriller',
+    production_year: 2009,
+    budget: 4698
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd882d"),
+    id: 142,
+    movie_name: 'Baran',
+    movie_genre: 'Adventure|Drama|Romance',
+    production_year: 2009,
+    budget: 8914
+  }
+]
+Type "it" for more
+assignment> db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:1}).limit(10)
+[
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87eb"),
+    id: 76,
+    movie_name: '200 Cigarettes',
+    movie_genre: 'Comedy|Drama',
+    production_year: 2010,
+    budget: 2197
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd88a1"),
+    id: 258,
+    movie_name: 'A Most Violent Year',
+    movie_genre: 'Action|Crime|Drama|Thriller',
+    production_year: 2010,
+    budget: 2489
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd896e"),
+    id: 463,
+    movie_name: 'Cheerleader Massacre',
+    movie_genre: 'Horror|Thriller',
+    production_year: 2010,
+    budget: 4067
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87d9"),
+    id: 58,
+    movie_name: 'Couch in New York, A',
+    movie_genre: 'Comedy|Drama|Romance',
+    production_year: 2010,
+    budget: 4486
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8869"),
+    id: 202,
+    movie_name: "Craig's Wife",
+    movie_genre: 'Drama',
+    production_year: 2010,
+    budget: 6123
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a1"),
+    id: 2,
+    movie_name: 'Dog Nail Clipper (Koirankynnenleikkaaja)',
+    movie_genre: 'Drama',
+    production_year: 2010,
+    budget: 7885
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8828"),
+    id: 137,
+    movie_name: 'Fire of Conscience (For lung)',
+    movie_genre: 'Action|Crime|Mystery|Thriller',
+    production_year: 2010,
+    budget: 3930
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd889e"),
+    id: 255,
+    movie_name: 'Hombre',
+    movie_genre: 'Western',
+    production_year: 2010,
+    budget: 6832
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd890b"),
+    id: 364,
+    movie_name: 'L.627',
+    movie_genre: 'Crime|Drama|Thriller',
+    production_year: 2010,
+    budget: 2586
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8842"),
+    id: 163,
+    movie_name: 'Lovers and Lollipops',
+    movie_genre: 'Drama|Romance',
+    production_year: 2010,
+    budget: 6894
+  }
+]
+assignment> db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:1}).skip(10).limit(5)
+[
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd898c"),
+    id: 493,
+    movie_name: 'Masters of the Universe',
+    movie_genre: 'Action|Adventure|Fantasy|Sci-Fi',
+    production_year: 2010,
+    budget: 4745
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8950"),
+    id: 433,
+    movie_name: 'Paradise Canyon',
+    movie_genre: 'Crime|Western',
+    production_year: 2010,
+    budget: 6259
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd88ab"),
+    id: 268,
+    movie_name: 'Return of Frank Cannon, The',
+    movie_genre: 'Action|Crime|Drama|Mystery|Thriller',
+    production_year: 2010,
+    budget: 4343
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8989"),
+    id: 490,
+    movie_name: 'Spider Lilies (Ci qing)',
+    movie_genre: 'Drama|Romance',
+    production_year: 2010,
+    budget: 8027
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd885a"),
+    id: 187,
+    movie_name: 'That Forsyte Woman',
+    movie_genre: 'Drama|Romance',
+    production_year: 2010,
+    budget: 7941
+  }
+]
+assignment> db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:1}).limit(10).update({},{$unset:{movie_genre:""}})
+TypeError: db.movies.fin ... it(10).update is not a function
+assignment> db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:1}).update({},{$unset:{movie_genre:""}})
+Uncaught:
+TypeError: ("﻿db.movies.fin ... 1
+  })﻿" , (intermediate value)(intermediate value) , (intermediate value)(intermediate value)(intermediate value)).update is not a function
+assignment> db.movies.update({},{$unset:{movie_genre:""}}).limit(10)
+DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
+Uncaught:
+TypeError: ("﻿db.movies.upd ... }
+  })﻿" , (intermediate value)(intermediate value) , (intermediate value)(intermediate value)(intermediate value)).limit
+assignment> db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:1}).limit(10).map((el)=>{el.remove("movie_genre")})
+TypeError: el.remove is not a function
+assignment> db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:1}).limit(10).map((el)=>{return {movie_name}})
+ReferenceError: movie_name is not defined
+assignment> db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:1}).limit(10).map((el)=>{return el.movie_name})
+[
+  '200 Cigarettes',
+  'A Most Violent Year',
+  'Cheerleader Massacre',
+  'Couch in New York, A',
+  "Craig's Wife",
+  'Dog Nail Clipper (Koirankynnenleikkaaja)',
+  'Fire of Conscience (For lung)',
+  'Hombre',
+  'L.627',
+  'Lovers and Lollipops'
+]
+assignment> db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:1}).limit(10).map((el)=>{return {"movie_name":el.movie_name})
+Uncaught:
+SyntaxError: Missing semicolon. (1:193)
+
+> 1 | db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:1}).limit(10).map((el)=>{return {"movie_name":el.movie_name})
+    |                                                                                                                                                                                                  ^
+  2 |
+
+assignment> db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:1}).limit(10).map((el)=>{return {movie_name:el.movie_name})
+Uncaught:
+SyntaxError: Missing semicolon. (1:191)
+
+> 1 | db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:1}).limit(10).map((el)=>{return {movie_name:el.movie_name})
+    |                                                                                                                                                                                                ^
+  2 |
+
+assignment> db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:1}).limit(10).map((el)=>{return {movie_name:el.movie_name};)
+Uncaught:
+SyntaxError: Unexpected token (1:192)
+
+> 1 | db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:1}).limit(10).map((el)=>{return {movie_name:el.movie_name};)
+    |                                                                                                                                                                                                 ^
+  2 |
+
+assignment> db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:1}).limit(10).map((el)=>{return el["movie_genre"]=null)
+Uncaught:
+SyntaxError: Missing semicolon. (1:187)
+
+> 1 | db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:1}).limit(10).map((el)=>{return el["movie_genre"]=null)
+    |                                                                                                                                                                                            ^
+  2 |
+
+assignment> db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:1}).limit(10).map((el)=>{return el["movie_genre"])
+Uncaught:
+SyntaxError: Missing semicolon. (1:182)
+
+> 1 | db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:1}).limit(10).map((el)=>{return el["movie_genre"])
+    |                                                                                                                                                                                       ^
+  2 |
+
+assignment> db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:1}).limit(10).map((el)=>{return el[movie_genre])
+Uncaught:
+SyntaxError: Missing semicolon. (1:180)
+
+> 1 | db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:1}).limit(10).map((el)=>{return el[movie_genre])
+    |                                                                                                                                                                                     ^
+  2 |
+
+assignment> db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:1}).limit(10).map((el)=>{return el["production_year"])
+Uncaught:
+SyntaxError: Missing semicolon. (1:186)
+
+> 1 | db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:1}).limit(10).map((el)=>{return el["production_year"])
+    |                                                                                                                                                                                           ^
+  2 |
+
+assignment> db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:1}).limit(10).map((el)=>{return el.production_year)
+Uncaught:
+SyntaxError: Missing semicolon. (1:183)
+
+> 1 | db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:1}).limit(10).map((el)=>{return el.production_year)
+    |                                                                                                                                                                                        ^
+  2 |
+
+assignment> db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:1}).limit(10).map((el)=>{return el.production_year})
+[
+  2010, 2010, 2010,
+  2010, 2010, 2010,
+  2010, 2010, 2010,
+  2010
+]
+assignment> db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:1}).limit(10).map((el)=>{return el[production_year]})
+ReferenceError: production_year is not defined
+assignment> db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:1}).limit(10).map((el)=>{return el["production_year"]})
+[
+  2010, 2010, 2010,
+  2010, 2010, 2010,
+  2010, 2010, 2010,
+  2010
+]
+assignment> db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:1}).limit(10).map((el)=>{return el["production_year"]=null})
+
+assignment> db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:1}).limit(10).map((el)=>{delete el["production_year"];return el})
+[
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87eb"),
+    id: 76,
+    movie_name: '200 Cigarettes',
+    movie_genre: 'Comedy|Drama',
+    budget: 2197
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd88a1"),
+    id: 258,
+    movie_name: 'A Most Violent Year',
+    movie_genre: 'Action|Crime|Drama|Thriller',
+    budget: 2489
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd896e"),
+    id: 463,
+    movie_name: 'Cheerleader Massacre',
+    movie_genre: 'Horror|Thriller',
+    budget: 4067
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87d9"),
+    id: 58,
+    movie_name: 'Couch in New York, A',
+    movie_genre: 'Comedy|Drama|Romance',
+    budget: 4486
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8869"),
+    id: 202,
+    movie_name: "Craig's Wife",
+    movie_genre: 'Drama',
+    budget: 6123
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a1"),
+    id: 2,
+    movie_name: 'Dog Nail Clipper (Koirankynnenleikkaaja)',
+    movie_genre: 'Drama',
+    budget: 7885
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8828"),
+    id: 137,
+    movie_name: 'Fire of Conscience (For lung)',
+    movie_genre: 'Action|Crime|Mystery|Thriller',
+    budget: 3930
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd889e"),
+    id: 255,
+    movie_name: 'Hombre',
+    movie_genre: 'Western',
+    budget: 6832
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd890b"),
+    id: 364,
+    movie_name: 'L.627',
+    movie_genre: 'Crime|Drama|Thriller',
+    budget: 2586
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8842"),
+    id: 163,
+    movie_name: 'Lovers and Lollipops',
+    movie_genre: 'Drama|Romance',
+    budget: 6894
+  }
+]
+assignment> db.movies.find({production_year:{$in:[2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010]}}).sort({production_year:-1,movie_name:1}).limit(10).map((el)=>{delete el["movie_genre"];return el})
+[
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87eb"),
+    id: 76,
+    movie_name: '200 Cigarettes',
+    production_year: 2010,
+    budget: 2197
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd88a1"),
+    id: 258,
+    movie_name: 'A Most Violent Year',
+    production_year: 2010,
+    budget: 2489
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd896e"),
+    id: 463,
+    movie_name: 'Cheerleader Massacre',
+    production_year: 2010,
+    budget: 4067
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87d9"),
+    id: 58,
+    movie_name: 'Couch in New York, A',
+    production_year: 2010,
+    budget: 4486
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8869"),
+    id: 202,
+    movie_name: "Craig's Wife",
+    production_year: 2010,
+    budget: 6123
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd87a1"),
+    id: 2,
+    movie_name: 'Dog Nail Clipper (Koirankynnenleikkaaja)',
+    production_year: 2010,
+    budget: 7885
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8828"),
+    id: 137,
+    movie_name: 'Fire of Conscience (For lung)',
+    production_year: 2010,
+    budget: 3930
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd889e"),
+    id: 255,
+    movie_name: 'Hombre',
+    production_year: 2010,
+    budget: 6832
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd890b"),
+    id: 364,
+    movie_name: 'L.627',
+    production_year: 2010,
+    budget: 2586
+  },
+  {
+    _id: ObjectId("6144b8ebeb99bc9733dd8842"),
+    id: 163,
+    movie_name: 'Lovers and Lollipops',
+    production_year: 2010,
+    budget: 6894
+  }
+]
+assignment> db.movies.update({},{$unset:{movie_genre:1},multi=true})
+...
+...
+...
+...
+... cls
+Uncaught:
+SyntaxError: Unexpected token (1:49)
+
+> 1 | db.movies.update({},{$unset:{movie_genre:1},multi=true})
+    |                                                  ^
+  2 |
+  3 |
+  4 |
+
+assignment> db.movies.update({},{$unset:{movie_genre:1}}).limit(10)
+Uncaught:
+TypeError: ("﻿db.movies.upd ... }
+  })﻿" , (intermediate value)(intermediate value) , (intermediate value)(intermediate value)(intermediate value)).limit is not a function
+assignment> db.movies.update({},{$unset:{movie_genre:1}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+assignment> db.movies.update({},{$unset:{movie_genre:1},{multi:true}})
+Uncaught:
+SyntaxError: Unexpected token (1:44)
+
+> 1 | db.movies.update({},{$unset:{movie_genre:1},{multi:true}})
+    |                                             ^
+  2 |
+
+assignment> db.movies.update({},{$unset:{movie_genre:1}},{multi:true}})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:57)
+
+> 1 | db.movies.update({},{$unset:{movie_genre:1}},{multi:true}})
+    |                                                          ^
+  2 |
+
+assignment> db.movies.update({},{$unset:{movie_genre:1}},{multi:true}})
+
+assignment> show collections
+movies
+users
+assignment> db.user.find({}).count()
+0
+assignment> db.user.inserMany([{"id":1,"first_name":"Mario","last_name":"Outright","email":"moutright0@virginia.edu","gender":"Genderfluid","ip_address":"83.24.87.246"},)
+Uncaught:
+SyntaxError: Unexpected token (1:157)
+
+> 1 | db.user.inserMany([{"id":1,"first_name":"Mario","last_name":"Outright","email":"moutright0@virginia.edu","gender":"Genderfluid","ip_address":"83.24.87.246"},)
+    |                                                                                                                                                              ^
+  2 |
+
+assignment> {"id":2,"first_name":"Joycelin","last_name":"Hovert","email":"jhovert1@sohu.com","gender":"Male","ip_address":"121.9.0.98"},
+... {"id":3,"first_name":"Currey","last_name":"Whaley","email":"cwhaley2@wikipedia.org","gender":"Non-binary","ip_address":"60.30.187.34"},
+... {"id":4,"first_name":"Jania","last_name":"Dix","email":"jdix3@google.com.au","gender":"Genderqueer","ip_address":"75.183.140.108"},
+... {"id":5,"first_name":"Kyle","last_name":"Olver","email":"kolver4@mozilla.org","gender":"Bigender","ip_address":"27.3
+assignment> db.users.insertMany([{"id":1,"first_name":"Mario","last_name":"Outright","email":"moutright0@virginia.edu","gender":"Genderfluid","ip_address":"83.24.87.246"},
+... {"id":2,"first_name":"Joycelin","last_name":"Hovert","email":"jhovert1@sohu.com","gender":"Male","ip_address":"121.9.0.98"},
+... {"id":3,"first_name":"Currey","last_name":"Whaley","email":"cwhaley2@wikipedia.org","gender":"Non-binary","ip_address":"60.30.187.34"},
+... {"id":4,"first_name":"Jania","last_name":"Dix","email":"jdix3@google.com.au","gender":"Genderqueer","ip_address":"75.183.140.108"},
+... {"id":5,"first_name":"Kyle","last_name":"Olver","email":"kolver4@mozilla.org","gender":"Bigender","ip_address":"27.34.154.159"},
+... {"id":6,"first_name":"Francyne","last_name":"Oram","email":"foram5@dion.ne.jp","gender":"Genderfluid","ip_address":"176.188.104.121"},
+... {"id":7,"first_name":"Isaiah","last_name":"Weildish","email":"iweildish6@unesco.org","gender":"Bigender","ip_address":"52.173.212.17"},
+... {"id":8,"first_name":"Daniel","last_name":"Prichet","email":"dprichet7@bandcamp.com","gender":"Genderfluid","ip_address":"218.83.29.95"},
+... {"id":9,"first_name":"Casie","last_name":"Dhillon","email":"cdhillon8@surveymonkey.com","gender":"Genderfluid","ip_address":"152.254.81.248"},
+... {"id":10,"first_name":"Abba","last_name":"Fley","email":"afley9@ebay.com","gender":"Genderfluid","ip_address":"82.221.102.108"}])db.users.insertMany([{"id":1,"first_name":"Mario","last_name":"Outright","email":"moutright0@virginia.edu","gender":"Genderfluid","ip_address":"83.24.87.246"},
+Uncaught:
+SyntaxError: Missing semicolon. (10:129)
+
+   8 | {"id":8,"first_name":"Daniel","last_name":"Prichet","email":"dprichet7@bandcamp.com","gender":"Genderfluid","ip_address":"218.83.29.95"},
+   9 | {"id":9,"first_name":"Casie","last_name":"Dhillon","email":"cdhillon8@surveymonkey.com","gender":"Genderfluid","ip_address":"152.254.81.248"},
+> 10 | {"id":10,"first_name":"Abba","last_name":"Fley","email":"afley9@ebay.com","gender":"Genderfluid","ip_address":"82.221.102.108"}])db.users.insertMany([{"id":1,"first_name":"Mario","last_name":"Outright","email":"moutright0@virginia.edu","gender":"Genderfluid","ip_address":"83.24.87.246"},
+     |                                                                                                                                  ^
+  11 |
+
+assignment> {"id":2,"first_name":"Joycelin","last_name":"Hovert","email":"jhovert1@sohu.com","gender":"Male","ip_address":"121.9.0.98"},
+... {"id":3,"first_name":"Currey","last_name":"Whaley","email":"cwhaley2@wikipedia.org","gender":"Non-binary","ip_addres
+assignment> db.user.insert([{"id":1,"first_name":"Mario","last_name":"Outright","email":"moutright0@virginia.edu","gender":"Genderfluid","ip_address":"83.24.87.246"},{"id":9,"first_name":"Casie","last_name":"Dhillon","email":"cdhillon8@surveymonkey.com","gender":"Genderfluid","ip_address":"152.254.81.248"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("6144c57af9bd9a4f0c99e3a6"),
+    '1': ObjectId("6144c57af9bd9a4f0c99e3a7")
+  }
+}
+assignment> {"id":2,"first_name":"Joycelin","last_name":"Hovert","email":"jhovert1@sohu.com","gender":"Male","ip_address":"121.9.0.98"},
+... {"id":3,"first_name":"Currey","last_name":"Whaley","email":"cwhaley2@wikipedia.org","gender":"Non-binary","ip_address":"60.30.187.34"},
+... {"id":4,"first_name":"Jania","last_name":"Dix","email":"jdix3@google.com.au","gender":"Genderqueer","ip_address":"75.183.140.108"},
+... {"id":5,"first_name":"Kyle","last_name":"Olver","email":"kolver4@mozilla.org","gender":"Bigender","ip_address":"27.34.154.159"},
+... {"id":6,"first_name":"Francyne","last_name":"Oram","email":"foram5@dion.ne.jp","gender":"Genderfluid","ip_address":"176.188.104.121"},
+... {"id":7,"first_name":"Isaiah","last_name":"Weildish","email":"iweildish6@unesco.org","gender":"Bigender","ip_address":"52.173.212.17"},
+... {"id":8,"first_name":"Daniel","last_name":"Prichet","email":"dprichet7@bandcamp.com","gender":"Genderfluid","ip_address":"218.83.29.95"}
+...
+... cls
+Uncaught:
+SyntaxError: Missing semicolon. (1:5)
+
+> 1 | {"id":2,"first_name":"Joycelin","last_name":"Hovert","email":"jhovert1@sohu.com","gender":"Male","ip_address":"121.9.0.98"},
+    |      ^
+assignment> db.users.insertMany([{"id":2,"first_name":"Joycelin","last_name":"Hovert","email":"jhovert1@sohu.com","gender":"Male","ip_address":"121.9.0.98"}, {"id":3,"first_name":"Currey","last_name":"Whaley","email":"cwhaley2@wikipedia.org","gender":"Non-binary","ip_address":"60.30.187.34"}, {"id":4,"first_name":"Jania","last_name":"Dix","email":"jdix3@google.com.au","gender":"Genderqueer","ip_address":"75.183.140.108"}, {"id":5,"first_name":"Kyle","last_name":"Olver","email":"kolver4@mozilla.org","gender":"Bigender","ip_address":"27.34.154.159"}, {"id":6,"first_name":"Francyne","last_name":"Oram","email":"foram5@dion.ne.jp","gender":"Genderfluid","ip_address":"176.188.104.121"}, {"id":7,"first_name":"Isaiah","last_name":"Weildish","email":"iweildish6@unesco.org","gender":"Bigender","ip_address":"52.173.212.17"}, {"id":8,"first_name":"Daniel","last_name":"Prichet","email":"dprichet7@bandcamp.com","gender":"Genderfluid","ip_address":"218.83.29.95"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("6144c59ff9bd9a4f0c99e3a8"),
+    '1': ObjectId("6144c59ff9bd9a4f0c99e3a9"),
+    '2': ObjectId("6144c59ff9bd9a4f0c99e3aa"),
+    '3': ObjectId("6144c59ff9bd9a4f0c99e3ab"),
+    '4': ObjectId("6144c59ff9bd9a4f0c99e3ac"),
+    '5': ObjectId("6144c59ff9bd9a4f0c99e3ad"),
+    '6': ObjectId("6144c59ff9bd9a4f0c99e3ae")
+  }
+}
+assignment> db.users.find({});
+
+
+assignment> db.users.find({})
+[
+  {
+    _id: ObjectId("6143685ff6f74ac4beba4228"),
+    first_name: 'akhil',
+    last_name: 'kamsala',
+    email: 'akhilkamsala@gmail.com',
+    gender: 'male',
+    ip_address: '192.168.1.1',
+    age: 26
+  },
+  {
+    _id: ObjectId("614368e2f6f74ac4beba4229"),
+    first_name: 'a',
+    last_name: 'k',
+    email: 'akhilk@gmail.com',
+    gender: 'male',
+    ip_address: '192.168.1.2',
+    age: 26
+  },
+  {
+    _id: ObjectId("614369aff6f74ac4beba422a"),
+    first_name: 'Suzette',
+    last_name: 'Walczynski',
+    email: 'swalczynski0@weather.com',
+    gender: 'Male',
+    ip_address: '20.133.36.161'
+  },
+  {
+    _id: ObjectId("614369aff6f74ac4beba422b"),
+    first_name: 'Chase',
+    last_name: 'Ellice',
+    email: 'celliceri@dot.gov',
+    gender: 'Agender',
+    ip_address: '70.47.70.138'
+  },
+  {
+    _id: ObjectId("614369aff6f74ac4beba422c"),
+    first_name: 'Kalindi',
+    last_name: 'Saberton',
+    email: 'ksabertonrj@fda.gov',
+    gender: 'Polygender',
+    ip_address: '188.122.243.46'
+  },
+  {
+    _id: ObjectId("614369aff6f74ac4beba422d"),
+    first_name: 'Minne',
+    last_name: 'Sherrott',
+    email: 'msherrottrk@columbia.edu',
+    gender: 'Non-binary',
+    ip_address: '93.103.249.232'
+  },
+  {
+    _id: ObjectId("614369aff6f74ac4beba422e"),
+    first_name: 'Lisle',
+    last_name: 'Bernlin',
+    email: 'lbernlinrl@kickstarter.com',
+    gender: 'Non-binary',
+    ip_address: '84.177.238.178'
+  },
+  {
+    _id: ObjectId("614369aff6f74ac4beba422f"),
+    first_name: 'Querida',
+    last_name: 'Legier',
+    email: 'qlegierrm@weather.com',
+    gender: 'Male',
+    ip_address: '188.247.104.139'
+  },
+  {
+    _id: ObjectId("614369aff6f74ac4beba4230"),
+    first_name: 'Shayna',
+    last_name: 'Barthelmes',
+    email: 'sbarthelmesrn@bluehost.com',
+    gender: 'Bigender',
+    ip_address: '67.97.67.129'
+  },
+  {
+    _id: ObjectId("614369aff6f74ac4beba4231"),
+    first_name: 'Henrik',
+    last_name: 'Grouvel',
+    email: 'hgrouvelro@moonfruit.com',
+    gender: 'Genderqueer',
+    ip_address: '164.123.8.116'
+  },
+  {
+    _id: ObjectId("614369aff6f74ac4beba4232"),
+    first_name: 'Twyla',
+    last_name: 'Iacovazzi',
+    email: 'tiacovazzirp@ox.ac.uk',
+    gender: 'Bigender',
+    ip_address: '33.197.235.107'
+  },
+  {
+    _id: ObjectId("614369aff6f74ac4beba4233"),
+    first_name: 'Eric',
+    last_name: 'Vater',
+    email: 'evaterrq@google.it',
+    gender: 'Agender',
+    ip_address: '34.155.16.156'
+  },
+  {
+    _id: ObjectId("614369aff6f74ac4beba4234"),
+    first_name: 'Wiatt',
+    last_name: 'Confait',
+    email: 'wconfaitrr@sphinn.com',
+    gender: 'Bigender',
+    ip_address: '148.229.186.81'
+  },
+  {
+    _id: ObjectId("6144c59ff9bd9a4f0c99e3a8"),
+    id: 2,
+    first_name: 'Joycelin',
+    last_name: 'Hovert',
+    email: 'jhovert1@sohu.com',
+    gender: 'Male',
+    ip_address: '121.9.0.98'
+  },
+  {
+    _id: ObjectId("6144c59ff9bd9a4f0c99e3a9"),
+    id: 3,
+    first_name: 'Currey',
+    last_name: 'Whaley',
+    email: 'cwhaley2@wikipedia.org',
+    gender: 'Non-binary',
+
+assignment> db.users.remove({_id: ObjectId("6144c59ff9bd9a4f0c99e3a9")})
+DeprecationWarning: Collection.remove() is deprecated. Use deleteOne, deleteMany, findOneAndDelete, or bulkWrite.
+{ acknowledged: true, deletedCount: 1 }
+assignment> db.users.deleteOne({_id: ObjectId("6144c59ff9bd9a4f0c99e3a9")})
+{ acknowledged: true, deletedCount: 0 }
+assignment> db.users.deleteOne({_id: ObjectId("614369aff6f74ac4beba422f")})
+{ acknowledged: true, deletedCount: 1 }
+assignment> db.users.deleteMany({gender:"Male"})
+{ acknowledged: true, deletedCount: 2 }
+assignment> db.users.drop()
+true
+assignment> show collections
+movies
+user
+assignment> db.dropDatabase()
+{ ok: 1, dropped: 'assignment' }
+assignment>
