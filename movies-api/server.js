@@ -28,9 +28,9 @@ app.use(express.json());
 
 app.post("/addMovies",(req,res)=>{
     Movie.create(req.body).then((data)=>{
-        res.send(data);
+        res.status(201).send(data);
     }).catch((err)=>{
-        res.send(err);
+        res.status(400).send(err);
     })
 });
 
@@ -40,9 +40,9 @@ app.post("/addMovies",(req,res)=>{
 app.get("/getMovies",(req,res)=>{
 
     Movie.find().lean().exec().then((data)=>{
-        res.send(data);
+        res.status(200).send(data);
     }).catch((err)=>{
-        res.send(err);
+        res.status(400).send(err);
     });
 
 
@@ -52,9 +52,9 @@ app.get("/getMovies",(req,res)=>{
 app.get("/getMovie/:id",(req,res)=>{
 
     Movie.findOne({_id:req.params.id}).lean().exec().then((data)=>{
-        res.send(data);
+        res.status(200).send(data);
     }).catch((err)=>{
-        res.send(err);
+        res.status(400).send(err);
     });
 
 
@@ -64,9 +64,9 @@ app.get("/getMovie/:id",(req,res)=>{
 app.patch("/movie/:id",(req,res)=>{
 
         Movie.findByIdAndUpdate(req.params.id,req.body,{new:true}).lean().exec().then((data)=>{
-            res.send(data);
+            res.status(200).send(data);
         }).catch((err)=>{
-            res.send(err);
+            res.status(400).send(err);
         });
 
 });
@@ -75,9 +75,9 @@ app.patch("/movie/:id",(req,res)=>{
 app.delete("/movie/:id",(req,res)=>{
 
     Movie.findByIdAndDelete(req.params.id,req.body).lean().exec().then((data)=>{
-        res.send(data);
+        res.status(200).send(data);
     }).catch((err)=>{
-        res.send(err);
+        res.status(400).send(err);
     });
 
 });
