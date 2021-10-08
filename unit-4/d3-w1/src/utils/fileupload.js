@@ -25,6 +25,10 @@ const upload = multer({
      fileFilter:fileFilter,
      limits:{
           fileSize : 1024*1024*5
+     },
+     onError:function(err,next){
+          console.error(err);
+          next(err);
      }
 });
 
