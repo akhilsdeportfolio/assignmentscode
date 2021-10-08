@@ -6,7 +6,7 @@ const upload = require('../utils/fileupload');
 const fs = require('fs');
 const multer = require('multer');
 const { body, validationResult } = require('express-validator');
-
+const newUser = require('../models/user2.model');
 
 
 
@@ -40,7 +40,14 @@ router.post("/validateUserData",body("first_name").isLength({min:3}).withMessage
      }
      else
      {
-          res.send("ok");
+          try{
+          let data=await newUser.create(req.body);
+          res.status(201).json(data);
+          }
+          catch(e)
+          {
+               res.status(400).json(e);
+          }
      }
 
 

@@ -13,3 +13,5 @@ let userSchema = new mongoose.Schema({
 
 
 let newUser = mongoose.model("newuser",userSchema);
+
+module.exports=newUser;
