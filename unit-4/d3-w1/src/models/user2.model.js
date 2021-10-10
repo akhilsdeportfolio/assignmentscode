@@ -8,7 +8,10 @@ let userSchema = new mongoose.Schema({
      email:{type:String,required:true},
      pincode:{type:String,required:true},
      age:{type:Number,required:true},
-     gender:{type:String,required:true}
+     gender:{type:String,required:true},
+},{
+     versionKey:false,
+     timestamps:true
 })
 
 

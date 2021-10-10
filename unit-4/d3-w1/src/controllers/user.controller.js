@@ -10,7 +10,7 @@ const newUser = require('../models/user2.model');
 
 
 
-console.log(body("first_name"))
+//console.log(body("first_name"))
 router.post("/validateUserData",body("first_name").isLength({min:3}).withMessage("please enter a valid first name"),body("last_name").isLength({min:3}).withMessage("please enter a valid last name"),body("email").isLength({min:5}).withMessage("please enter a valid email address of length 5 characters atleast"),body("email").isEmail().withMessage("please enter a valid email"),body("pincode").isLength({min:6,max:6}).withMessage("please enter a valid pincode"),body("age").custom((value)=>{
      if(value > 0 && value < 101)
           return true;
