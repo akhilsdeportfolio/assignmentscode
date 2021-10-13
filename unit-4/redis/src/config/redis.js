@@ -6,4 +6,4 @@ client.on("error", function(error) {
 });
 
 
-module.exports=client;
+module.exports={client,redis};
