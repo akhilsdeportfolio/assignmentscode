@@ -61,4 +61,4 @@ const signup = async (req,res)=>
      
 };
 
-module.exports ={signin,signup};
+module.exports ={signin,signup,newtoken};
