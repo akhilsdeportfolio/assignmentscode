@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import {useState} from 'react';
-
+import TodoList from './TodoList';
 function App() {
 
 
@@ -9,22 +9,29 @@ function App() {
   let [count,setCount]=useState(0);
   let [age,setAge]=useState(0);
 
-
+  let handleClick =(value)=>{
+    setCount(count+value);
+  }
 
   return (
     <>
       <h1>Count :{count}</h1>
-      <button  onClick={(e)=>{
-        let updatedCount = count+1;              
-        setCount(updatedCount)        
-      }}>Add 1</button>
 
-<button onClick={(e)=>{
-        let updatedCount = count-1;              
-        setCount(updatedCount)        
-      }}>Del 1</button>
+
+
+      <button onClick={()=>{
+        handleClick(1);
+      }} >Add</button>
+
+<button onClick={()=>{
+        handleClick(-1);
+      }} >Add</button>
+
+
+      <TodoList/>
     </>
   );
 }
+
 
 export default App;

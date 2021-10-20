@@ -1,0 +1,78 @@
+.item{
+
+     color: black;
+     padding: 30px;
+     border: 2px solid whitesmoke;
+     background-color: whitesmoke;
+     text-align: center;
+     max-width: 100%;
+     margin: auto;
+     margin-top: 20px;
+     margin-bottom: 10px;
+     
+
+}
+
+input:focus{
+     outline: none;
+
+}
+
+button:focus{
+     outline: none;
+}
+input{
+     padding: 25px;
+     min-width: 70%;
+}
+
+button {
+     
+     background: transparent;
+     margin-left: 20px;
+     border: 0px;
+          
+     
+}
+
+img{
+     
+     max-width: 65px;
+     max-height: 65px;
+}
+
+img:hover{
+     background-color: azure;
+}
+
+.left
+{
+     float: left;
+     
+}
+
+.right{
+     float: right;
+}
+
+.clear
+{clear: both;}
+
+.container{
+
+     background-color: antiquewhite;
+     border-radius: 10px;     
+     padding: 10px;
+     color: black;
+     
+     flex-basis: 90%;
+     text-align: center;
+     max-width: 30%;
+     margin: auto;
+     margin-bottom: 10px;
+     border-radius: 5px;
+}
+
+.item:hover{
+     background-color: rgb(190, 187, 187);     
+}
