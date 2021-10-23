@@ -1,12 +1,14 @@
 
-import { Input,Center,Spacer,Box,Text,HStack,VStack} from  '@chakra-ui/react';
+import { Input,Center,Spacer,Box,Text,HStack,VStack,useToast} from  '@chakra-ui/react';
 import { IconButton} from '@chakra-ui/button'
 import { Fa, FaAd, FaRegPlusSquare } from 'react-icons/fa'
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import {TodoList} from './TodoList';
 function TodoInput({padding})
-{    
+{   
+     
+     const toast=useToast();
 
      const [todo,SetTodo] = useState({
           title:"",
@@ -41,7 +43,13 @@ function TodoInput({padding})
 
           if(todo.title==="")
           {
-               alert('enter something');
+               toast({
+                    title: "Task Title required.",
+                    description: "please enter the task you want to do.",
+                    status: "error",
+                    duration: 9000,
+                    isClosable: true,
+                  })
                return;
           }
           addTodo({ todo });
@@ -93,14 +101,18 @@ function TodoInput({padding})
 
 
 
+     let clearTasks = ()=>{
+          setTodos([]);
+     }
+
 
      return(
           <>
-          <Box  m="auto" w="100%" mt="20px"  padding={padding}>
-          <Center  >
+          <Box  m="auto" w="100%" mt="20px"  padding={padding} >
+          <Center >
 
-               <IconButton mr="20px" onClick={ handleClick } size="lg"><FaRegPlusSquare/></IconButton>            
-               <Input type="text" variant="filled" size="lg" placeholder="What you want to do Today?" padding="10px" w="80%" onChange={handleChange} value={todo.title} />
+               <IconButton  mr="20px" onClick={ handleClick } size="lg"><FaRegPlusSquare/></IconButton>            
+               <Input color="whiteAlpha.900" fontWeight="900"  type="text" variant="filled" size="lg" placeholder="What you want to do Today?" padding="10px" w="80%" onChange={handleChange} value={todo.title} />
                
           </Center>
 
@@ -110,7 +122,7 @@ function TodoInput({padding})
 
           <Box  m="auto" w="100%" mt="20px"  >
           <VStack w="100%">
-                    <TodoList key="8" todos={todos} check={handleChecked} deleteListItem={handleDelete} />
+                    <TodoList key="8" todos={todos} check={handleChecked} deleteListItem={handleDelete}  clearTasks={clearTasks}/>
           </VStack>
           </Box>
 
