@@ -1,17 +1,62 @@
 import logo from './logo.svg';
 import './App.css';
-import {Text,Box,Center,Heading,Button,Spacer,IconButton,Flex} from '@chakra-ui/react'
+import {Text,HStack,Box,Center,Heading,Button,Spacer,IconButton,Flex} from '@chakra-ui/react'
 import { useEffect, useRef, useState } from 'react';
+import { UserRegistration } from './UserRegistration';
+import axios from 'axios';
+import call from './util/call';
 
 function App() {
 
   const ref = useRef(null);
   const [count,setCount]=useState(0);
   const [isRunning,seTIsRunning]=useState(false);
-
+  const top = useRef(null);
+  const inpRef=useRef(null);
   useEffect(()=>{
     
   },[]);
+
+
+  let initData = {
+    name:"",
+    age:20,
+    gender:null,
+    agreed:false
+  }
+
+  let [data,setData]=useState(initData);
+
+
+  let handleSubmit=(e)=>{
+    e.preventDefault();
+    console.log(data);
+    console.log(inpRef.current.files[0]);
+  }
+
+  let handleChange =(e)=>{
+
+    
+    console.log(e.target)    ;
+    const {name,value,type,checked}=e.target;
+    let formData ={...data,[name]: type==="checkbox"?checked:value};
+    setData(formData);
+    console.log(formData);
+    
+
+
+
+  }
+
+
+  let makeApiCall = (e)=>{
+    e.preventDefault();
+    call.get("/users").then(res=>console.log(res)).catch(e=>console.error(e));
+  }
+
+
+
+
 
 
   let handlePause = ()=>{
@@ -30,13 +75,19 @@ function App() {
   let handleReset = ()=>{
     setCount(0);
   }
-  console.log(ref);
+  
   return (
 
     < >
-    <Box m="2" gridGap="10"  flexDirection="column">
+
+    <UserRegistration/>
+    <Flex ref={top} m="2" gridGap="10"  flexDirection="column">
       <Center><Heading>{count}</Heading></Center>
-    <Flex gridGap="20">
+    
+
+      <Center >
+
+
       <Button disabled={!isRunning}
       onClick={handlePause}
   size="lg"
@@ -48,6 +99,7 @@ function App() {
 >
   Pause
 </Button>
+<Spacer/>
   <Button
   disabled={isRunning}
   onClick={handleStart}
@@ -60,7 +112,7 @@ function App() {
 >
   Start
 </Button>
-
+<Spacer/>
 <Button disabled={isRunning ? true: false}
   onClick={handleReset}
   size="lg"
@@ -72,10 +124,38 @@ function App() {
 >
   Reset
 </Button>
-</Flex>
+</Center>
 
-  </Box> 
-    </>
+
+<Box h="400" bg="cyan.400"/>
+<Box h="400" bg="teal.400"/>
+<Box h="400" bg="blue.400"/>
+<Box h="400" bg="green.400"/>
+<Button  border="2px"
+  borderColor="green.500" onClick={()=>{top.current.scrollIntoView({behavior:"smooth"})}}>Move to top</Button>
+</Flex> 
+
+
+<Flex flexDirection="row">
+
+
+  <form onSubmit={makeApiCall}>
+
+    <input onChange={handleChange} name="name" placeholder="Enter Name"/>
+
+    <input onChange={handleChange} name="age" placeholder="Enter age"/>
+    <select onChange={handleChange}  name="gender">
+      <option value="male">Male</option>
+      <option value="female">Fe-Male</option>
+    </select>
+    <label>Agree<input onChange={handleChange} name="agreed" type="checkbox"/></label>
+    <input ref={inpRef} type="file" name="files" />
+    <input type="submit"/>
+
+    
+  </form>
+</Flex>
+</>
 
   );
 }
