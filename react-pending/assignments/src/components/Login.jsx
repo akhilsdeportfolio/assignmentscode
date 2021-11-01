@@ -3,6 +3,9 @@ import './Login.css';
 import config from './config';
 import bcrypt from 'bcryptjs';
 import crypto from 'crypto-js';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField'
+import { CircularProgress } from '@mui/material';
 
 
 
@@ -21,6 +24,7 @@ export default function()
      const [isNumberError,setError]=useState(false);
      const [errorMessage,setErrorMessage]=useState("");
      const [loading,setLoading]=useState(false);
+     let resp="";
      let txd="4c0467d2-d8e1-4dca-928b-ba43da14c31c";
      let token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiI3NGJjZTk0Yi0yMjAzLTQzOWItOTk2Yi04NGU5Y2ZmMTVjZWYiLCJ1c2VyX3R5cGUiOiJCRU5FRklDSUFSWSIsInVzZXJfaWQiOiI3NGJjZTk0Yi0yMjAzLTQzOWItOTk2Yi04NGU5Y2ZmMTVjZWYiLCJtb2JpbGVfbnVtYmVyIjo4NzkwODU2MDQwLCJiZW5lZmljaWFyeV9yZWZlcmVuY2VfaWQiOjE4ODg2OTAwMzc4NTEwLCJ0eG5JZCI6IjRjMDQ2N2QyLWQ4ZTEtNGRjYS05MjhiLWJhNDNkYTE0YzMxYyIsImlhdCI6MTYzNTc1Nzc2MiwiZXhwIjoxNjM1NzU4NjYyfQ.cGGupKboLpT5kgCnPgJggUoQ5G5zV9YMuNxg0mFxtik";
 
@@ -57,10 +61,20 @@ export default function()
 
      const handleOnClick=async (e)=>{
 
+          setLoading(true);
+          try{
           let res=await config.post("/v2/auth/public/generateOTP",{
                "mobile":number
           });
-          txd=res.data.txnId;
+          resp=res;
+          setLoading(false);
+          }
+          catch(e)
+          {
+               setLoading(false);
+               setErrorMessage(JSON.stringify(e));
+          }
+          
      };
 
 
@@ -85,13 +99,14 @@ export default function()
           <div className="card">
                
                <h1> please enter mobile number to begin</h1>
-               <input placeholder="Enter Mobile Number" onChange={handleOnChange} type="text" maxLength={10}/>
+               <p>{JSON.stringify(resp)}</p>
+               <TextField id="outlined-basic" label="Enter mobile number" variant="outlined"  placeholder="Enter Mobile Number" onChange={handleOnChange} type="text" maxLength={10}/>
                <br/>
                {isNumberError && <p className="error">{errorMessage}</p>}
                <br/>
-               <div className="loader"></div>
+               { loading && <CircularProgress />}
                <br/>
-               <button onClick={handleOnClick}>Get OTP</button>
+               <Button onClick={handleOnClick}>Get OTP</Button>
           </div>
      </>);
 
