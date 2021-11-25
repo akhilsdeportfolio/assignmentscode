@@ -69,20 +69,7 @@ export const todoReducer = (state=initState,{type,payload})=>
                saveData("todos",{...state})
 
                case TOGGLE_TODO:
-                    saveData("todos",{
-                         ...state,                    
-                         loading:false,
-                         todos:[...state.todos.map((el)=>{
-                              if(el.id===payload)
-                              {
-                                   el.status=!el.status;
-                                   return el;
-                              }
-                              else 
-                                   return el;
-                         })],
-                         error:null
-                    })
+                    
                return {
                     ...state,                    
                     todos:[...state.todos.map((el)=>{
