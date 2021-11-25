@@ -1,29 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
-
-import{useState} from 'react';
-
+import { store } from './Redux/store';
+import { add_count ,dec_count} from './actions';
+import {useDispatch,useSelector} from 'react-redux';
+import { Todo } from './components/Todo';
 
 function App() {
 
-  const [count,setCount] = useState(0);
+  let state = useSelector(store=>store.count);
+  let dispatch=useDispatch();
+  console.log("State",state);
+  //console.log("rendered")
+  return (
+    <div className="App">
+        <h1>{store.getState().count}</h1>
 
-  let handleClick=(value)=>{
-    setCount(count+value);
-  }
+     <div style={{display:'flex',justifyContent:'space-evenly'}}>
+        <button onClick={(e)=>{dispatch(add_count(1))}}>ADD</button>
+        <button onClick={(e)=>{dispatch(dec_count(1))}}>DEC</button>
+      </div>  
 
-
-  return (    
-    <>
-    <h1>Counter : {count}</h1>
-    <button onClick={()=>{
-      handleClick(1);  }}
-      >Add</button>
-    <button onClick={()=>{
-      handleClick(-1)
-    }}>Del</button>
-    </>
-    
+      <Todo/>
+    </div> 
   );
 }
 
