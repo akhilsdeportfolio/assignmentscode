@@ -7,8 +7,6 @@ let initState=loadData('todos')||{
      todos:[],
      error:null
 }
-
-
 export const todoReducer = (state=initState,{type,payload})=>
 {    
           switch(type)
