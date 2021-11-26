@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import {useDispatch,useSelector} from 'react-redux';
+import {shallowEqual, useDispatch,useSelector} from 'react-redux';
 import { v4 } from "uuid";
 import { addTodoFailure, addTodoLoading, addTodoSuccess, deleteTodo, getTodoLoading, getTodoSuccess, toggleTodo } from "../Todo/action";
 import  {MdDangerous,MdTick} from 'react-icons/md';

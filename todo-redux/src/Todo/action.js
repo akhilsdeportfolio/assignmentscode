@@ -28,3 +28,4 @@ export const toggleTodo = (data)=>{
 export const deleteTodo = (data)=>{
      return {type : DELETE_TODO,payload:data};
 }
+
